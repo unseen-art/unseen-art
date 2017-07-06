@@ -9,10 +9,12 @@ public class GameInstance : MonoBehaviour {
 		instance = FindObjectOfType<GameInstance> ();
 
 		StartupClient startup = new StartupClient ();
+		startup.RunInit ();
+		startup.RunStart ();
 	}
 
 	void Start () {
-		
+		DontDestroyOnLoad (this);
 	}
 
 	void Update () {
